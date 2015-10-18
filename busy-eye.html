@@ -10,73 +10,15 @@
                 background: #333;
                 color: #ccc;
             }
+
+            h1 {
+                background: #fff;
+            }
         </style>
     </head>
     <body>
         <h1>Hello</h1>
         <p>world</p>
-        <script>
-            (() => {
-                const mosaicWidth = 100;
-
-                const doc = document;
-                const body = doc.body;
-                body.style.background = 'transparent';
-
-                const bwidth = doc.documentElement.clientWidth;
-                const bheight = doc.documentElement.clientHeight;
-
-                var nbCols = Math.ceil(bwidth / mosaicWidth);
-                var nbRows = Math.ceil(bheight / mosaicWidth);
-
-                if (0 === nbCols % 2) {
-                    nbCols++;
-                }
-
-                const frame = doc.createElement('div');
-                const fstyle = frame.style;
-                fstyle.position = 'fixed';
-                fstyle.zIndex = -9999;
-                fstyle.top = 0;
-                fstyle.bottom = 0;
-                fstyle.left = 0;
-                fstyle.right = `${bwidth - nbCols * mosaicWidth}px`;
-
-                body.appendChild(frame);
-
-                const nbMosaic = nbCols * nbRows;
-
-                const style = doc.createElement('style');
-                doc.head.appendChild(style);
-                const sheet = style.sheet;
-                sheet.insertRule(`.busy-eye-mosaic { float: left; width: ${mosaicWidth}px; height: ${mosaicWidth}px }`, 0);
-                sheet.insertRule('.busy-eye-mosaic-light { background: #fff }', 0);
-                sheet.insertRule('.busy-eye-mosaic-dark { background: #000 }', 0);
-
-                for (var i = 1; i <= nbMosaic; ++i) {
-                    var mosaic = doc.createElement('div');
-
-                    if (i % 2) { // odd
-                        mosaic.className = 'busy-eye-mosaic busy-eye-mosaic-dark';
-                    } else {
-                        mosaic.className = 'busy-eye-mosaic busy-eye-mosaic-light';
-                    }
-
-                    frame.appendChild(mosaic);
-                }
-
-                setInterval(() => {
-                    var mosaics = frame.getElementsByClassName('busy-eye-mosaic');
-                    for (var i = 0; i <  mosaics.length; ++i) {
-                        var mosaic = mosaics[i];
-                        if (mosaic.className.indexOf('dark') >= 0) {
-                            mosaic.className = mosaic.className.replace('dark', 'light');
-                        } else {
-                            mosaic.className = mosaic.className.replace('light', 'dark');
-                        }
-                    }
-                }, 500);
-            })();
-        </script>
+        <script src="busy-eye.js"></script>
     </body>
 </html>
