@@ -1,12 +1,13 @@
 # Busy Eye
 
-A treatment for lazy-eye
+A JS bookmarklet of amblyopia(lazy eye) treatment. It'll turn a webpage into a lazy eye recovery instrument,
+so you can practice your lazy eye while browsing.
 
-用于弱视治疗
+用于给弱视眼做康复训练的JS脚本。能把正在浏览的网页变成一个弱视训练仪，做到浏览网页的同时，也能训练弱视眼
 
 ## 使用方式 How to use
 
-请访问此[链接](http://chrisyue.github.io/busy-eye/index.html)
+请访问此[链接](http://www.chrisyue.com/busy-eye-a-bookmarklet-of-lazy-eye-treatment.html)
 
 Please follow this [link](http://chrisyue.github.io/busy-eye/index.html)
 
